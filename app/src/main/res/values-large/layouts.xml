@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="login" type="layout">@layout/activity_login</item>
+    <item name="homes" type="layout">@layout/home</item>
+     <item name="thank" type="layout">@layout/thanks</item>
+     <item name="dialogs" type="layout">@layout/dialog</item>
+     <item name="auth" type="layout">@layout/authenticate</item>
+        <dimen name="home_large">60dp</dimen>
+    <dimen name="home_small">40dp</dimen>
+
+</resources>

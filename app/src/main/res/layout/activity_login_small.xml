@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/t1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        android:orientation="vertical" >
+        
+         <LinearLayout android:layout_height="0dp"
+            android:layout_width="match_parent"
+             android:layout_gravity="center"
+             android:gravity="center"
+            android:layout_weight="1">
+
+
+
+                 <ImageView
+                     android:layout_width="200dp"
+                     android:layout_height="180dp"
+                     android:layout_gravity="center"
+                     android:src="@drawable/preschool" />
+
+        </LinearLayout>
+        <LinearLayout android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1.1">
+
+        <include layout="@layout/dialogs" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/t2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.1"
+        android:gravity="bottom"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:id="@+id/rz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/rzd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="250px"
+                    android:layout_height="160px"
+                    android:src="@drawable/isoft_white">
+
+                </ImageView>
+                <pl.droidsonroids.gif.GifImageView
+                    android:layout_width="120px"
+                    android:layout_height="120px"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/globe" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:text="SOFTWARE - MOBILE APPLICATIONS - WEB"
+                android:gravity="center"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/contact_number"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:gravity="center"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="WWW.I-SOFT.US"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:gravity="center"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

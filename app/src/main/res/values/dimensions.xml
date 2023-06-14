@@ -1,0 +1,44 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="max_padding">10dp</dimen>
+    <dimen name="medium_padding">5dp</dimen>
+    <dimen name="min_padding">2dp</dimen>
+    <dimen name="min_width">100dp</dimen>
+    <dimen name="min_margin">5dp</dimen>
+    <dimen name="max_text">25sp</dimen>
+    <dimen name="header_text">30sp</dimen>
+    <dimen name="max_margin">15dp</dimen>
+    <dimen name="medium_margin">15dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="medium_icon_size">25dp</dimen>
+    <dimen name="max_icon_size">50dp</dimen>
+    <dimen name="image_size">125dp</dimen>
+    <dimen name="min_edit_height">30dp</dimen>
+    <dimen name="min_btn_height">40dp</dimen>
+    <dimen name="min_btn_width">100dp</dimen>
+    <dimen name="avg_text">18dp</dimen>
+    <dimen name="underline">1dp</dimen>
+    <dimen name="min_height">25dp</dimen>
+    <dimen name="image">48dp</dimen>
+    <dimen name="edittxt_height">35dp</dimen>
+    <dimen name="border_width">1dp</dimen>
+    <dimen name="border_offset">-0.5dp</dimen>
+    <dimen name="text_big">25sp</dimen>
+    <dimen name="medium_text">16sp</dimen>
+    <dimen name="btn_height">35dp</dimen>
+    <!-- <dimen name="btn_height">45dp</dimen> -->
+    <dimen name="large_btn_width">150dp</dimen>
+    <dimen name="low_padding">2dp</dimen>
+    <dimen name="imagenew">48dp</dimen>
+    <dimen name="image1">24dp</dimen>
+    <dimen name="image_view_height">200dp</dimen>
+    <dimen name="min_btn_widthsmall">120dp</dimen>
+    <dimen name="icon">48dp</dimen>
+    <dimen name="image_logo_size">100dp</dimen>
+    
+    <dimen name="home_large">50dp</dimen>
+    <dimen name="home_small">30dp</dimen>
+
+</resources>

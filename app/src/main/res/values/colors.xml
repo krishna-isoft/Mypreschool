@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="light_pink">#f8f4f8</color>
+    <color name="greenish">#0a7983</color>
+    <color name="white">#ffffff</color>
+    <color name="golden">#ffba00</color>
+    <color name="cyan">#0b84aa</color>
+    <color name="list_item_title">#fff</color>
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#992416</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+    <color name="blue">#EDF4FF</color>
+    
+    <color name="bluenew">#0B0B61</color>
+    <color name="orangenew">#FFD426</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="orange">#f17948</color>
+    <color name="meg">#8f0609</color>
+    <color name="gray">#544E4F</color>
+    <color name="common">#56A5EC</color>
+    <color name="default_btn">#73A3EF</color>
+    <color name="default_bg">#EDF4FF</color>
+    <color name="dark_blue">#00008B</color>
+    <color name="light_blue">#ADDFFF</color>
+    <color name="lavender">#E3E4FA</color>
+    <color name="selective_bg">#73A3EF</color>
+    <color name="mild_blue">#AFCEEE</color>
+    <color name="azure">#F0FFFF</color>
+    <color name="powder_blue">#B0E0E6</color>
+    <color name="ghostwhite">#F8F8FF</color>
+    <color name="ghostwhite1">#fffafa</color>
+    <color name="ghostwhite2">#fbf9f9</color>
+    <color name="whatzappBorder">#345752</color>
+    <color name="light_yellow">#f9f5da</color>
+    <color name="light_yellow1">#ffe981</color>
+    
+    
+    <color name="light">#dfdfe5</color>
+    
+    
+    
+    
+    
+    
+    
+    
+      <color name="bg_login">#26ae90</color>
+    <color name="bg_register">#2e3237</color>
+    <color name="bg_main">#428bca</color>
+  
+    <color name="input_login">#222222</color>
+    <color name="input_login_hint">#999999</color>
+    <color name="input_register">#888888</color>
+    <color name="input_register_bg">#3b4148</color>
+    <color name="input_register_hint">#5e6266</color>
+    <color name="btn_login">#26ae90</color>
+    <color name="btn_login_bg">#eceef1</color>
+    <color name="lbl_name">#333333</color>
+    <color name="btn_logut_bg">#ff6861</color>
+    
+     <color name="bg">#ffffcc</color>
+    <color name="light_red">#f5e7e7</color>
+    <color name="yellow">#ECF03C</color>
+    <color name="green">#17BD17</color>
+    <color name="lightback">#f4f5f7</color>
+    <color name="dark">#000000</color>
+    <color name="darkred">#FF0000</color>
+    <color name="dblue">#09c8eb</color>
+    <color name="grey_font">#ff9e9e9e</color>
+    <color name="light_gray">#A9A9A9</color>
+    <color name="blue_A2E5F5">#A2E5F5</color>
+    <color name="cgray">#cccccc</color>
+    <color name="ldgray">#D3D3D3</color>
+    <color name="pickup">#F8C7FF</color>
+    <color name="inroute">#17BD17</color>
+    <color name="rest">#6C17FF</color>
+    <color name="transparent">#80000000</color>
+    <color name="brown">#A52A2A</color>
+    <color name="dkblue">#00008b</color>
+    <color name="tickblue">#273663</color>
+    <color name="viedtick">#61BBF7</color>
+    <color name="lgray">#808080</color>
+    <color name="dgray">#808080</color>
+    <color name="footer_color">#587343</color>
+    <color name="llgray">#A9A9A9</color>
+    <color name="lkgray">#d4d4d4</color>
+
+    <color name="gree">#2E8B57</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="listdivider">#dedede</color>
+    <color name="bgbubbleself">#E1E1E1</color>
+    <color name="greenishd">#0a7983</color>
+    <color name="companycolor">#273663</color>
+
+    <color name="raction">#EE314C</color>
+    <color name="rtop">#8B0205</color>
+    <color name="rbottom">#EC1259</color>
+    <color name="rlock">#652328</color>
+    <color name="signupColor">#066e8a</color>
+</resources>

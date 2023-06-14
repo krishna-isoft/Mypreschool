@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="login" type="layout">@layout/activity_login_small</item>
+    <item name="homes" type="layout">@layout/home_small</item>
+    <item name="thank" type="layout">@layout/thanks_small</item>
+     <item name="dialogs" type="layout">@layout/dialog_small</item>
+      <item name="auth" type="layout">@layout/authenticate_small</item>
+    
+
+</resources>
