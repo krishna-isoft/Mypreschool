@@ -64,7 +64,7 @@ public class Home extends Activity{
 				R.drawable.usa };
 		*/
 	public static int cameraID = 1;
-	private static String ab=""+0;
+	private static String ab="";
 	  ProgressDialog progressDialog;
 
 	  private Context context;
@@ -847,11 +847,24 @@ if(jsonArray !=null && jsonArray.length()>0)
 				if (pickup.isChecked()) {
 
 					Status=1;
-					ab=String.valueOf(Status);
+					if(ab.contentEquals(""))
+					{
+						ab=String.valueOf(Status);
+					}else {
+						ab+=",";
+						ab+=String.valueOf(Status);
+					}
+
 
 				} else if (dropoff.isChecked()) {
 					Status=0;
-					ab=String.valueOf(Status);
+					if(ab.contentEquals(""))
+					{
+						ab=String.valueOf(Status);
+					}else {
+						ab+=",";
+						ab+=String.valueOf(Status);
+					}
 
 				}
 			}

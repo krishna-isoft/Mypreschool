@@ -11,7 +11,7 @@
     <dimen name="max_margin">15dp</dimen>
     <dimen name="medium_margin">15dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">17dp</dimen>
     <dimen name="medium_icon_size">25dp</dimen>
     <dimen name="max_icon_size">50dp</dimen>
     <dimen name="image_size">125dp</dimen>
@@ -38,8 +38,9 @@
     <dimen name="icon">48dp</dimen>
     <dimen name="image_logo_size">100dp</dimen>
     
-    <dimen name="home_large">50dp</dimen>
+    <dimen name="home_large">51dp</dimen>
     <dimen name="home_small">30dp</dimen>
     <dimen name="home_image">65dp</dimen>
-    <dimen name="sskh">300dp</dimen>
+    <dimen name="ss_kh">300dp</dimen>
+    <dimen name="img_icon">50dp</dimen>
 </resources>
