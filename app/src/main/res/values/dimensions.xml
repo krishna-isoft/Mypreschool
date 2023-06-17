@@ -40,5 +40,6 @@
     
     <dimen name="home_large">50dp</dimen>
     <dimen name="home_small">30dp</dimen>
-
+    <dimen name="home_image">65dp</dimen>
+    <dimen name="sskh">300dp</dimen>
 </resources>

@@ -23,6 +23,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -32,15 +33,22 @@ import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.JsonObject;
 import com.isoft.mypreschool.api.PickServiceGenerator;
 import com.isoft.mypreschool.api.Pick_api;
+import com.isoft.mypreschool.modelclass.Login_model;
 import com.isoft.mypreschool.modelclass.Save_model;
+import com.isoft.mypreschool.modelclass.User_model;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -62,9 +70,8 @@ public class Home extends Activity{
 	  private Context context;
 	  private int Status=0;
 	  
-	  private RadioButton pickup;
-		private RadioButton dropoff;
-		private RadioGroup rg1;
+
+
 		private TextView btnsubmit;
 		Intent inte;
 		public static String userid;
@@ -104,7 +111,10 @@ public class Home extends Activity{
 		public static byte[] pikimg;
 		public static byte[] dropimg;
 		Pick_api api;
-		
+		private String str_rid="";
+
+		private LinearLayout linchild;
+	JSONArray jsonchildid = new JSONArray();
 		
 		
 	 @Override
@@ -113,13 +123,13 @@ public class Home extends Activity{
 	        setContentView(R.layout.homes);
 	        
 	        context=this;
-	        rg1=findViewById(R.id.rgroup1);
-	        pickup=findViewById(R.id.pickup);
-	        dropoff=findViewById(R.id.drop);
+
+
 	        btnsubmit=findViewById(R.id.register);
 	        txtsname=findViewById(R.id.tt1);
 	        txtpname=findViewById(R.id.pt1);
 	        pphoto=findViewById(R.id.master_photoview);
+			linchild=findViewById(R.id.lin_child);
 	        
 	        pref=Preference.getInstance(context);
 	        inte=getIntent();
@@ -134,12 +144,14 @@ public class Home extends Activity{
 	        	utype=inte.getStringExtra("utype");
 	        	sname=inte.getStringExtra("sname");
 	        	pname=inte.getStringExtra("pname");
-	        	
+				if(inte.hasExtra("id")) {
+					str_rid = inte.getStringExtra("id");
+				}
 	        	txtsname.setText(sname);
 	        	txtpname.setText("Welcome "+pname);
 	        }
-	        
 
+		 getuserdetails();
 
 	        btnsubmit.setOnClickListener(new OnClickListener() {
 				
@@ -257,22 +269,7 @@ public class Home extends Activity{
 
 
 	        
-	        rg1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
-				public void onCheckedChanged(RadioGroup arg0, int arg1) {
-
-					if (pickup.isChecked()) {
-						
-						Status=1;
-						ab=String.valueOf(Status);
-						
-					} else if (dropoff.isChecked()) {
-						Status=0;
-						ab=String.valueOf(Status);
-						
-					} 
-				}
-			});
 	    }
 	 
 @Override
@@ -696,7 +693,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			strPhoto = null;
 		}
 			api = PickServiceGenerator.createService(Pick_api.class, context);
-			Call<Save_model> call = api.savedata_pick(ab,userid,utype,strPhoto);
+			Call<Save_model> call = api.savedata_pick(ab,userid,utype,strPhoto,jsonchildid.toString());
 
 			call.enqueue(new Callback<Save_model>() {
 				@Override
@@ -759,4 +756,109 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			progressDialog = null;
 		}
 	}
+
+	private void getuserdetails() {
+
+			if (progressDialog != null && progressDialog.isShowing()) {
+
+			} else {
+				progressDialog = new ProgressDialog(context,
+						AlertDialog.THEME_HOLO_LIGHT);
+				progressDialog.setMessage("Please wait...");
+				progressDialog.setCancelable(false);
+				progressDialog.show();
+			}
+		Log.e(" urlll","https://mypreschool.net/app/child_details.php?pid="+str_rid);
+			api = PickServiceGenerator.createService(Pick_api.class, context);
+			Call<JsonObject> call = api.getUserinformation(str_rid);
+
+			call.enqueue(new Callback<JsonObject>() {
+				@Override
+				public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+					Log.e(" Responsev"," "+response.toString());
+					Log.e(" Responsesskk"," "+String.valueOf(response.code()));
+					if(response.isSuccessful()) {
+
+						cancelprogresssdialog();
+						Log.e(" Responsecqevv","z "+response.body().toString());
+						if (response.body() != null) {
+							String strresponse = response.body().toString();
+							try {
+
+
+								if (strresponse != null) {
+									JSONObject jsonresponse = new JSONObject(strresponse);
+									//Log.e("responsez","@"+response.toString());
+									String status = jsonresponse
+											.getString("status");
+									Log.e("status","@"+status);
+									String ids = jsonresponse
+											.getString("id");
+									Log.e("ids","@"+ids);
+									JSONArray jsonArray = new JSONArray(ids);
+									String chnames = jsonresponse
+											.getString("child_name");
+									JSONArray jsonArrayname = new JSONArray(chnames);
+if(jsonArray !=null && jsonArray.length()>0)
+{
+	for(int k=0;k<jsonArray.length();k++)
+	{
+		String vzk=jsonArray.getString(k);
+		String vzkname=jsonArrayname.getString(k);
+		Log.e("vzk","@"+vzk);
+		addLayout(vzkname,vzk);
+	}
+}
+
+								}
+							}catch (Exception e)
+							{
+
+							}
+						}
+					}
+				}
+
+				@Override
+				public void onFailure(Call<JsonObject> call, Throwable t) {
+					Log.e("tttt", " Response Error " + t.getMessage());
+					cancelprogresssdialog();
+					Toast.makeText(context, "Login credential wrong please try again ", Toast.LENGTH_SHORT).show();
+				}
+			});
+
+	}
+
+	private void addLayout(String strname, String strid) {
+		View layout2 = LayoutInflater.from(this).inflate(R.layout.childlist, linchild, false);
+
+		TextView txtname = layout2.findViewById(R.id.txtname);
+		TextView txtid = layout2.findViewById(R.id.txtid);
+		RadioGroup rg1=layout2.findViewById(R.id.rgroup1);
+		RadioButton pickup=layout2.findViewById(R.id.pickup);
+		RadioButton dropoff=layout2.findViewById(R.id.drop);
+		txtname.setText(""+strname);
+		txtid.setText(""+strid);
+		jsonchildid.put(""+strid);
+		rg1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			public void onCheckedChanged(RadioGroup arg0, int arg1) {
+
+				if (pickup.isChecked()) {
+
+					Status=1;
+					ab=String.valueOf(Status);
+
+				} else if (dropoff.isChecked()) {
+					Status=0;
+					ab=String.valueOf(Status);
+
+				}
+			}
+		});
+
+
+		linchild.addView(layout2);
+	}
+
 }

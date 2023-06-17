@@ -194,7 +194,7 @@ ProgressDialog progressdlog;
 					if(response.isSuccessful()) {
 
 						cancelprogresssdialog();
-						//  Log.e(" Responsecqevv","z "+response.body());
+						  Log.e(" Responsecqevv","z "+response.body().status);
 						if (response.body() != null) {
 							if(response.body().status==1) {
 								Toast.makeText(getBaseContext(), "Login successfully",
@@ -206,6 +206,7 @@ ProgressDialog progressdlog;
 								inte.putExtra("userid", "" + edtPin.getText().toString());
 								inte.putExtra("utype", "" + response.body().user_type);
 								inte.putExtra("sname", "" +  response.body().child_name);
+								inte.putExtra("id", "" +  response.body().id);
 
 								inte.putExtra("pname", "" +  response.body().guardian_name);
 

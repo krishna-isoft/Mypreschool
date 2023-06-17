@@ -1,9 +1,11 @@
 package com.isoft.mypreschool.api;
 
+import com.google.gson.JsonObject;
 import com.isoft.mypreschool.modelclass.Forgot_model;
 import com.isoft.mypreschool.modelclass.LoginAdmin_model;
 import com.isoft.mypreschool.modelclass.Login_model;
 import com.isoft.mypreschool.modelclass.Save_model;
+import com.isoft.mypreschool.modelclass.User_model;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -31,10 +33,15 @@ public interface Pick_api {
     @FormUrlEncoded
     @POST("pickinsert.php")
     Call<Save_model> savedata_pick(@Field("id") String id, @Field("pick") String pick,
-                                   @Field("user_type") String user_type, @Field("photo") String photo);
+                                   @Field("user_type") String user_type, @Field("photo") String photo, @Field("child") String child);
     @POST("school_login.php")
     Call<LoginAdmin_model> getadminLogin(
             @Query("email") String email,@Query("password") String password
+    );
+
+    @GET("child_details.php")
+    Call<JsonObject> getUserinformation(
+            @Query("pid") String pid
     );
 
 }
