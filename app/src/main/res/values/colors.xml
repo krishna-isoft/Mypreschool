@@ -107,4 +107,6 @@
     <color name="rbottom">#EC1259</color>
     <color name="rlock">#652328</color>
     <color name="signupColor">#066e8a</color>
+
+    <color name="purple">#800080</color>
 </resources>

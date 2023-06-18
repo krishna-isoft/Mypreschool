@@ -122,6 +122,8 @@ public class AdminloginActivity extends AppCompatActivity {
                                 finish();
                             }
                         }
+                    }else{
+                        cancelprogresssdialog();
                     }
                 }
 
