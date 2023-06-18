@@ -768,19 +768,19 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 				progressDialog.setCancelable(false);
 				progressDialog.show();
 			}
-		Log.e(" urlll","https://mypreschool.net/app/child_details.php?pid="+str_rid);
+		//Log.e(" urlll","https://mypreschool.net/app/child_details.php?pid="+str_rid);
 			api = PickServiceGenerator.createService(Pick_api.class, context);
 			Call<JsonObject> call = api.getUserinformation(str_rid);
 
 			call.enqueue(new Callback<JsonObject>() {
 				@Override
 				public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-					Log.e(" Responsev"," "+response.toString());
-					Log.e(" Responsesskk"," "+String.valueOf(response.code()));
+					//Log.e(" Responsev"," "+response.toString());
+					//Log.e(" Responsesskk"," "+String.valueOf(response.code()));
 					if(response.isSuccessful()) {
 
 						cancelprogresssdialog();
-						Log.e(" Responsecqevv","z "+response.body().toString());
+						//Log.e(" Responsecqevv","z "+response.body().toString());
 						if (response.body() != null) {
 							String strresponse = response.body().toString();
 							try {
@@ -791,10 +791,10 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 									//Log.e("responsez","@"+response.toString());
 									String status = jsonresponse
 											.getString("status");
-									Log.e("status","@"+status);
+									//Log.e("status","@"+status);
 									String ids = jsonresponse
 											.getString("id");
-									Log.e("ids","@"+ids);
+									//Log.e("ids","@"+ids);
 									JSONArray jsonArray = new JSONArray(ids);
 									String chnames = jsonresponse
 											.getString("child_name");
@@ -805,7 +805,7 @@ if(jsonArray !=null && jsonArray.length()>0)
 	{
 		String vzk=jsonArray.getString(k);
 		String vzkname=jsonArrayname.getString(k);
-		Log.e("vzk","@"+vzk);
+		//Log.e("vzk","@"+vzk);
 		addLayout(vzkname,vzk);
 	}
 }
@@ -821,7 +821,7 @@ if(jsonArray !=null && jsonArray.length()>0)
 
 				@Override
 				public void onFailure(Call<JsonObject> call, Throwable t) {
-					Log.e("tttt", " Response Error " + t.getMessage());
+					//Log.e("tttt", " Response Error " + t.getMessage());
 					cancelprogresssdialog();
 					getuserdetails();
 					Toast.makeText(context, "Login credential wrong please try again ", Toast.LENGTH_SHORT).show();
