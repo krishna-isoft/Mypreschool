@@ -212,6 +212,9 @@ ProgressDialog progressdlog;
 
 								startActivity(inte);
 								finish();
+							}else{
+								Toast.makeText(context, "Login credential wrong please try again ", Toast.LENGTH_SHORT).show();
+
 							}
 						}
 					}
